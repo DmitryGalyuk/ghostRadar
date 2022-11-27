@@ -3,10 +3,30 @@
 
 <head>
     <title>Ghost radar</title>
+    <link rel="radar" href="https://codepen.io/aaronchuo/pen/vYvPgx" />
+    <link rel="ghostIcon" href="https://www.svgrepo.com/svg/199885/ghost" />
+    <link rel="quaternion formula" href="https://mobiforge.com/design-development/the-generic-sensor-api" />
+    <link rel="stylesheet" href="css/radar.css" />
+    <script src="js/ghost.js"></script>
+    <script src="js/app.js"></script>
+    <style>
+
+    </style>
 </head>
 
-<body>
-    No ghosts
+<body onload="init()">
+    <div class="radar">
+        <div class="scanner"></div>
+        <ul class="ghostsContainer">
+            <li></li>
+            <li></li>
+            <!--     <li></li>
+            <li></li>
+            <li></li> -->
+            <li></li>
+        </ul>
+    </div>
+
 </body>
 
 </html>
