@@ -47,11 +47,13 @@ function drawGhosts(app) {
     let container = document.querySelector(app.selectorGhosts);
     container.replaceChildren();
     for (const ghost of app.ghosts) {
-        let elem = document.createElement("li");
+        let elem = document.createElement("svg");
+        elem.setAttribute("src", "img/ghost.svg");
+        elem.style.fill = "#AFA";
+        elem.style.stroke = "F00";
         elem.style.top = ghost.top + "%";
         elem.style.left = ghost.left + "%";
         elem.style.animationDelay = ghost.animationDelay(app.scanPeriod) + "ms";
-        // elem.style.webkitAnimationDelay = ghost.animationDelay(app.scanPeriod) + "ms";
         container.appendChild(elem);
     }
 }
