@@ -1,63 +1,18 @@
-:root {
-    --radar-diameter: 100px;
-    --radar-scan-period: 6s
-}
-
 body {
     background: #222;
 }
 
-.radar {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    box-shadow: inset 0 0 0 99px #222, inset 0 0 0 100px rgba(0, 255, 0, 0.2), inset 0 0 0 199px #222, inset 0 0 0 200px rgba(0, 255, 0, 0.2), inset 0 0 0 299px #222, inset 0 0 0 300px rgba(0, 255, 0, 0.2);
-    border-radius: 50%;
-    transform: rotate(0deg);
-    overflow: hidden;
-    width: var(--radar-diameter);
-    height: var(--radar-diameter);
-    border: 1px solid #393;
+.radarcircle {
+    fill: #222;
+    --scanPeriod: 5s;
 }
 
-.radar .scanner {
-    -webkit-animation: scanning var(--radar-scan-period) infinite linear;
-    animation: scanning var(--radar-scan-period) infinite linear;
-    /* background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjEuMCIgeDI9IjEuMCIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwZmYwMCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='); */
-    background-size: 100%;
-    background-image: linear-gradient(to top right, #00ff00 0%, rgba(0, 0, 0, 0) 50%);
-    transform-origin: top left;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: var(--radar-diameter);
-    height: var(--radar-diameter);
-    border-left: 1px solid rgba(0, 255, 0, 0.1);
+.radarcircle .outterline {
+    stroke: #afa;
 }
 
-.radar:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 1px;
-    height: 100%;
-    background: rgba(0, 255, 0, 0.2);
-}
-
-.radar:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: rgba(0, 255, 0, 0.2);
+.radarcircle .innerline {
+    stroke: rgb(255, 170, 184);
 }
 
 .radar .ghostsContainer {
@@ -67,27 +22,13 @@ body {
 .radar .ghostsContainer svg {
     -webkit-animation: target var(--radar-scan-period) infinite linear;
     animation: target var(--radar-scan-period) infinite linear;
-    /* border-radius: 50%; */
-    /* box-shadow: 0 0 10px #AFA; */
     filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     display: block;
     position: absolute;
     width: 10%;
     height: 10%;
-    /* background: #AFA; */
-}
 
-@-webkit-keyframes scanning {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes scanning {
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 @-webkit-keyframes target {

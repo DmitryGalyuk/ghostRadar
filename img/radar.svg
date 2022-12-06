@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <linearGradient id="gradient-1" x1="0%" y1="100%" x2="100%" y2="0%" bx:pinned="true">
+      <stop offset="0" style="stop-color: rgb(0, 255, 0);"/>
+      <stop offset="0.6" style="stop-color: rgb(0, 0, 0); stop-opacity: 0.5"/>
+      <stop offset="1" style="stop-color: rgb(0, 0, 0); stop-opacity: 0"/>
+    </linearGradient>
+ 
+  </defs>
+
+  <circle style="stroke: rgb(170, 255, 170);" cx="50" cy="50" rx="50" r="50" class="outterline"/>
+  <circle style="stroke: rgb(170, 255, 170);" cx="50" cy="50" r="35" class="outterline"/>
+  <circle style="stroke: rgb(170, 255, 170);" cx="50" cy="50" r="20" class="outterline"/>
+  <line style="stroke: rgb(170, 255, 170);" x1="50" y1="0" x2="50" y2="100" class="outterline"/>
+  <line style="stroke: rgb(170, 255, 170);" x1="0" y1="50" x2="100" y2="50" class="outterline"/>
+  <path d="M 50 100
+          A 50 50, 0, 0, 0, 100 50
+          L 50 50 Z"
+          style="fill: url(#gradient-1);"
+          opacity="0.9"
+          class="scan"
+           >
+            <animateTransform
+              type="rotate"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"
+              attributeName="transform"
+              attributeType="XML"
+              dur="3s"
+            />
+  </path>
+  <circle style="stroke: rgb(255, 170, 170);" cx="50" cy="50" r="10" class="innerline"/>
+</svg>

@@ -1,15 +1,14 @@
 function init() {
     app = {
             heading: 0, // angle
-            scanPeriod: 6, // seconds
+            scanPeriod: 3, // seconds
             ghosts: [], // array of ghosts
             ghostsNumber: 4, // number of ghosts
-            radarDiameter: 100, // initial radar diameter in pixels
             selectorGhosts: ".radar .ghostsContainer", // selector of container elements storing ghosts
         }
         // initSensor(app);
-    initGhosts(app);
     initUI(app);
+    initGhosts(app);
     drawGhosts(app);
     console.log(app);
 }
@@ -35,12 +34,20 @@ function initGhosts(app) {
 }
 
 function initUI(app) {
-    let diameter = window.innerHeight < window.innerWidth ?
-        window.innerHeight :
-        window.innerWidth;
-    diameter = Math.floor(diameter * 0.9); // some padding
-    app.radarDiameter = diameter;
-    document.body.style.setProperty("--radar-diameter", diameter + "px");
+    document.querySelector(':root').style.setProperty("--radar-scan-period", app.scanPeriod + "s");
+    window.onresize = resizeRadar;
+    resizeRadar();
+}
+
+function resizeRadar() {
+    let radarDiv = document.querySelector(".radar");
+    if (window.innerHeight < window.innerWidth) {
+        radarDiv.style.height = "100%";
+        radarDiv.style.width = "";
+    } else {
+        radarDiv.style.width = "100%";
+        radarDiv.style.height = "";
+    }
 }
 
 function drawGhosts(app) {

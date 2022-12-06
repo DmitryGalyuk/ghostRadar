@@ -1,0 +1,7 @@
+.app {
+    display: flex;
+    flex-wrap: wrap;
+}
+.buttons {
+    display: flex;
+}
