@@ -25,6 +25,16 @@ function initSensor(app) {
 }
 
 function initGhosts(app) {
+    // app.ghosts.push(new Ghost(0,0));
+    // app.ghosts.push(new Ghost(50,90));
+    // // app.ghosts.push(new Ghost(0,0));
+    // // app.ghosts.push(new Ghost(0,0));
+    // // app.ghosts.push(new Ghost(0,0));
+    // // app.ghosts.push(new Ghost(0,0));
+    // // app.ghosts.push(new Ghost(0,0));
+    // // app.ghosts.push(new Ghost(0,0));
+    // return;
+    
     for (let i = 0; i < app.ghostsNumber; i++) {
         let distance = Math.floor(Math.random() * 100);
         let angle = Math.floor(Math.random() * 360);
@@ -40,14 +50,16 @@ function initUI(app) {
 }
 
 function resizeRadar() {
-    let radarDiv = document.querySelector(".radar");
+    let varRoot = document.querySelector(":root");
+    let size;
     if (window.innerHeight < window.innerWidth) {
-        radarDiv.style.height = "100%";
-        radarDiv.style.width = "";
-    } else {
-        radarDiv.style.width = "100%";
-        radarDiv.style.height = "";
+        size = window.innerHeight;
+     } else {
+        size = window.innerWidth;
     }
+    size = Math.floor(size*0.95);
+    varRoot.style.setProperty("--radar-height", size);
+    varRoot.style.setProperty("--radar-width", size);
 }
 
 function drawGhosts(app) {

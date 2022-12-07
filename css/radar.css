@@ -1,10 +1,47 @@
+::root {
+    --radar-height: 100%;
+    --radar-width: 100%;
+}
+
 body {
     background: #222;
 }
 
+.app {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100%;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.radar {
+    display: grid;
+    /* flex-grow: 1; */
+    height: var(--radar-height);
+    width: var(--radar-width);
+}
+
+.radarcircle, .ghostsContainer {
+    grid-area: 1 / 1;
+}
+
+.ghostsContainer {
+    position: relative;
+}
+
 .radarcircle {
     fill: #222;
-    --scanPeriod: 5s;
+    height: var(--radar-height);
+    width: var(--radar-width);
+
 }
 
 .radarcircle .outterline {
@@ -17,6 +54,8 @@ body {
 
 .radar .ghostsContainer {
     list-style: none;
+    height: var(--radar-height);
+    width: var(--radar-width);
 }
 
 .radar .ghostsContainer svg {
@@ -29,24 +68,6 @@ body {
     width: 10%;
     height: 10%;
 
-}
-
-@-webkit-keyframes target {
-    1% {
-        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=50);
-        opacity: 0.5;
-        transform: scale(2.5);
-    }
-    3% {
-        filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
-        opacity: 1;
-        transform: scale(1.5);
-    }
-    60% {
-        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
-        opacity: 0;
-        transform: scale(0.6);
-    }
 }
 
 @keyframes target {

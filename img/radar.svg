@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+<svg viewBox="-1 -1 103 103" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
   <defs>
-    <linearGradient id="gradient-1" x1="0%" y1="100%" x2="100%" y2="0%" bx:pinned="true">
+    <linearGradient id="gradient-1" x1="0%" y1="100%" x2="80%" y2="0%" bx:pinned="true">
       <stop offset="0" style="stop-color: rgb(0, 255, 0);"/>
       <stop offset="0.6" style="stop-color: rgb(0, 0, 0); stop-opacity: 0.5"/>
-      <stop offset="1" style="stop-color: rgb(0, 0, 0); stop-opacity: 0"/>
+      <stop offset="0.8" style="stop-color: rgb(0, 0, 0); stop-opacity: 0"/>
     </linearGradient>
  
   </defs>
@@ -21,7 +21,7 @@
           opacity="0.9"
           class="scan"
            >
-            <animateTransform
+            <animateTransform id="scanAnim"
               type="rotate"
               from="0 50 50"
               to="360 50 50"
