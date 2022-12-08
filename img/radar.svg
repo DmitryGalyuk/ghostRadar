@@ -3,8 +3,8 @@
   <defs>
     <linearGradient id="gradient-1" x1="0%" y1="100%" x2="80%" y2="0%" bx:pinned="true">
       <stop offset="0" style="stop-color: rgb(0, 255, 0);"/>
-      <stop offset="0.6" style="stop-color: rgb(0, 0, 0); stop-opacity: 0.5"/>
-      <stop offset="0.8" style="stop-color: rgb(0, 0, 0); stop-opacity: 0"/>
+      <stop offset="0.6" style="stop-color: rgb(2, 2, 2); stop-opacity: 0.5"/>
+      <stop offset="0.8" style="stop-color: rgb(2, 2, 2); stop-opacity: 0"/>
     </linearGradient>
  
   </defs>

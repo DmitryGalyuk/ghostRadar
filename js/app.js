@@ -17,9 +17,10 @@ function initSensor(app) {
     let sensor = new AbsoluteOrientationSensor({ frequency: 5 });
     sensor.addEventListener('reading', function(e) {
         var q = e.target.quaternion;
-        app.heading = Math.atan2(2 * q[0] * q[1] + 2 * q[2] * q[3], 1 - 2 * q[1] * q[1] - 2 * q[2] * q[2]) * (180 / Math.PI);
+        let heading = Math.atan2(2 * q[0] * q[1] + 2 * q[2] * q[3], 1 - 2 * q[1] * q[1] - 2 * q[2] * q[2]) * (180 / Math.PI);
         if (heading < 0)
             heading = 360 + heading;
+        app.heading = heading;
     });
     sensor.start();
 }
@@ -57,7 +58,7 @@ function resizeRadar() {
      } else {
         size = window.innerWidth;
     }
-    size = Math.floor(size*0.95);
+    size = Math.floor(size*0.9);
     varRoot.style.setProperty("--radar-height", size);
     varRoot.style.setProperty("--radar-width", size);
 }
