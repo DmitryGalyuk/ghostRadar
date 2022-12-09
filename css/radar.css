@@ -14,11 +14,16 @@ body {
     justify-content: center;
 }
 
+@media (min-width: 600px) and (orientation:landscape) {
+    .app {
+        flex-wrap: nowrap;
+    }
+}
+
 .buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
     padding: 1em;
     flex-grow: 1;
 }
@@ -39,13 +44,12 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: fit-content;
 }
 
 .radar {
     display: grid;
-    /* flex-grow: 1; */
-    /* height: var(--radar-height);
-    width: var(--radar-width); */
+
 }
 
 .radarcircle, .ghostsContainer {

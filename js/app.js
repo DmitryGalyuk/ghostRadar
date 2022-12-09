@@ -58,7 +58,7 @@ function resizeRadar() {
      } else {
         size = window.innerWidth;
     }
-    size = Math.floor(size*0.9);
+    size = Math.floor(size*0.8);
     varRoot.style.setProperty("--radar-height", size);
     varRoot.style.setProperty("--radar-width", size);
 }
