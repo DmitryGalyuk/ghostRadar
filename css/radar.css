@@ -11,8 +11,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    /* height: 95%;
-    width: 95%; */
+    justify-content: center;
 }
 
 .buttons {
@@ -33,7 +32,7 @@ body {
     background-color: #222;
     border-radius: 1em;
     border-color: #afa;
-    border-width: 1em;
+    border-width: 0.3em;
     color: #afa;
     font-size: 2vmax;
     margin: 1em;
